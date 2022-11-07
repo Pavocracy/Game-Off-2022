@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/pig.png-e6d52c5f224ea8c92012706ef65951af.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/pig.png"
+dest_files=[ "res://.import/pig.png-e6d52c5f224ea8c92012706ef65951af.stex" ]
+
 [params]
 
 compress/mode=0
