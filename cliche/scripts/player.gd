@@ -1,19 +1,31 @@
 extends KinematicBody2D
 
-var velocity: Vector2
+var sprite: Sprite
+var movement: Vector2
+var speed: int
 
-func check_input(): 
-	velocity = Vector2()
+func cartesian_to_isometric(cartesian: Vector2):
+	return Vector2(cartesian.x - cartesian.y, (cartesian.x + cartesian.y) / 2)
+	
+func process_input(): 
+	sprite = $Sprite
+	movement = Vector2()
+	speed = 200
 	if Input.is_action_pressed("up"):
-		velocity.y -= 1
+		movement.y -= 1
+		sprite.frame = 1
 	if Input.is_action_pressed("down"):
-		velocity.y += 1
+		movement.y += 1
+		sprite.frame = 3
 	if Input.is_action_pressed("left"):
-		velocity.x -= 1
+		movement.x -= 1
+		sprite.frame = 2
 	if Input.is_action_pressed("right"):
-		velocity.x += 1
-	velocity = velocity.normalized()
-	velocity = move_and_slide(velocity * 200)
+		movement.x += 1
+		sprite.frame = 0
+	movement = movement.normalized() * speed
+	movement = cartesian_to_isometric(movement)
+	move_and_slide(movement)
 
 func _physics_process(_delta):
-	check_input()
+	process_input()
