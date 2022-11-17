@@ -25,7 +25,7 @@ func process_input():
 		sprite.frame = 0
 	movement = movement.normalized() * speed
 	movement = cartesian_to_isometric(movement)
-	move_and_slide(movement)
+	var _move = move_and_slide(movement)
 
 func _physics_process(_delta):
 	process_input()
