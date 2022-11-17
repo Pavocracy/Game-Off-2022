@@ -7,7 +7,6 @@ var _moved: Vector2
 var speed: int
 var jumping: bool
 var jump_frame: int
-var jump_direction: String
 var tileSize: Dictionary
 
 func _ready():
