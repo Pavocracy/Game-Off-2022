@@ -24,8 +24,6 @@ func cartesian_to_isometric(cartesian: Vector2):
 	return isometric
 
 func check_movement():
-	if jumping:
-		return
 	cartesian = Vector2()
 	if Input.is_action_pressed("up"):
 		cartesian.y -= 1
