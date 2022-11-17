@@ -29,16 +29,16 @@ func check_movement():
 	cartesian = Vector2()
 	if Input.is_action_pressed("up"):
 		cartesian.y -= 1
-		sprite.frame = 1
+		sprite.frame = 3
 	if Input.is_action_pressed("right"):
 		cartesian.x += 1
-		sprite.frame = 0
+		sprite.frame = 2
 	if Input.is_action_pressed("down"):
 		cartesian.y += 1
-		sprite.frame = 3
+		sprite.frame = 6
 	if Input.is_action_pressed("left"):
 		cartesian.x -= 1
-		sprite.frame = 2
+		sprite.frame = 7
 	cartesian = cartesian.normalized() * speed
 	isometric = cartesian_to_isometric(cartesian)
 	_moved = move_and_slide(isometric)
