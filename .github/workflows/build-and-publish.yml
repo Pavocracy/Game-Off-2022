@@ -33,10 +33,10 @@ jobs:
     - name: 'Build Executables'
       run: |
         cd cliche
-        mkdir -v -p build
-        godot -v --export "Windows" ./build/cliche-windows.exe
-        godot -v --export "Linux" ./build/cliche-linux.x86_64
-        godot -v --export "MacOSX" ./build/cliche-macosx.zip
+        mkdir -v build
+        godot -v --export "Windows Desktop" ./build/cliche-windows.exe
+        godot -v --export "Linux/X11" ./build/cliche-linux.x86_64
+        godot -v --export "Mac OSX" ./build/cliche-macosx.zip
 
     - name: 'Upload dist files to release'
       uses: svenstaro/upload-release-action@v2

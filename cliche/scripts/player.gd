@@ -14,10 +14,10 @@ func _ready():
 	animation = $AnimationTree
 	tileSize = Dictionary({"width": 223.0, "height": 128.0})
 
-func cartesian_to_isometric(cartesian: Vector2):
+func cartesian_to_isometric(input_cartesian: Vector2):
 	isometric = Vector2()
-	isometric.x = cartesian.x - cartesian.y
-	isometric.y = (cartesian.x + cartesian.y) / (tileSize["width"] / tileSize["height"])
+	isometric.x = input_cartesian.x - input_cartesian.y
+	isometric.y = (input_cartesian.x + input_cartesian.y) / (tileSize["width"] / tileSize["height"])
 	return isometric
 
 func check_movement():
