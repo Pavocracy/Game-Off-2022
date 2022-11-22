@@ -26,11 +26,11 @@ jobs:
         mv templates/* ~/.local/share/godot/templates/
 
     - name: 'Build Executables'
-      strategy:
-        matrix:
-          os: [ Windows, Linux, MacOSX ]
-      run:
-        godot -v --export ${{ matrix.os }}
+      run: |
+        mkdir -p build
+        godot -v --export "Windows" ./build/cliche-windows.exe
+        godot -v --export "Linux" ./build/cliche-linux.x86_64
+        godot -v --export "MacOSX" ./build/cliche-macosx.zip
 
     - name: 'Upload dist files to release'
       uses: svenstaro/upload-release-action@v2
