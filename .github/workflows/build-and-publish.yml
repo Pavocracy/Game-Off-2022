@@ -23,11 +23,11 @@ jobs:
         wget -q https://github.com/godotengine/godot/releases/download/3.5.1-stable/Godot_v3.5.1-stable_export_templates.tpz
         echo "Download complete!"
         echo "Setting up directories and unzipping..."
-        mkdir -v -p ~/.cache ~/.config/godot ~/.local/share/godot/templates/
+        mkdir -v -p ~/.cache ~/.config/godot ~/.local/share/godot/templates/3.5.1.stable
         unzip Godot_v3.5.1-stable_linux_headless.64.zip
         mv -v Godot_v3.5.1-stable_linux_headless.64 /usr/local/bin/godot
         unzip Godot_v3.5.1-stable_export_templates.tpz
-        mv -v templates/* ~/.local/share/godot/templates/
+        mv -v templates/* ~/.local/share/godot/templates/3.5.1.stable
         echo "Godot setup complete!"
 
     - name: 'Build Executables'
